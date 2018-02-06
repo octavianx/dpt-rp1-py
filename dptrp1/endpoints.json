@@ -17,60 +17,59 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** ★ Obsoleted use deprecated ★ ** __ * n ** Get document list ** \n * entry_type Filter by item type \n * All (folder + document 'notes' \n * search_target Target of keyword search or identifier specification \n * Document meta information (name, title, author): 'all' \n * Document: 'documents' 'annotation_pattern' \n * annotation_type Filter by type annotation type \n <small> * search ('*') * 'document_body' \n * Document body: 'document_body' </ small> \n * All (highlight + handwritten): 'all' \n * Highlights: 'highlights' \n * Handwriting: 'handwritings' \n * order_type Specify sort order in list \n <small> * </ Small> \n * Name - Ascending order: 'entry_name_asc' \n * Name - The folder is grouped first in ascending order, the folders are grouped first in descending order, 'Modified_date_desc' \n * Created date and time - Ascending order: 'created_date_asc' \n * Created date and time - Descending order: 'created_date_desc' \n * Edit date and time - Ascending order: 'modified_date_asc' \n * Edit date and time - Descending order: 'modified_date_desc' 'reading_date_desc' \n * Ascending order: 'title_asc' \n * Title - Descending order: 'title_desc' \n * Author - ascending order: n * Last viewed date and time - Ascending order: 'reading_date_asc' \n * Last viewed date and time - 'author_sc' \n * Author - Descending order: 'author_desc' \n * File size - Ascending order: 'file_size_asc' \n * File size - Descending order: 'file_size_desc' \n ",
-                "parameters": [
-                    {
+                "description": "** ★ Obsoleted use deprecated ★ ** __ * n ** Get document list ** \n * entry_type Filter by item type \n * All (folder + document 'notes' \n * search_target Target of keyword search or identifier specification \n * Document meta information (name, title, author): 'all' \n * Document: 'documents' 'annotation_pattern' \n * annotation_type Filter by type annotation type \n <small> * search ('*') * 'document_body' \n * Document body: 'document_body' </ small> \n * All (highlight + handwritten): 'all' \n * Highlights: 'highlights' \n * Handwriting: 'handwritings' \n * order_type Specify sort order in list \n <small> * </ Small> \n * Name - Ascending order: 'entry_name_asc' \n * Name - The folder is grouped first in ascending order, the folders are grouped first in descending order, 'Modified_date_desc' \n * Created date and time - Ascending order: 'created_date_asc' \n * Created date and time - Descending order: 'created_date_desc' \n * Edit date and time - Ascending order: 'modified_date_asc' \n * Edit date and time - Descending order: 'modified_date_desc' 'reading_date_desc' \n * Ascending order: 'title_asc' \n * Title - Descending order: 'title_desc' \n * Author - ascending order: n * Last viewed date and time - Ascending order: 'reading_date_asc' \n * Last viewed date and time - 'author_sc' \n * Author - Descending order: 'author_desc' \n * File size - Ascending order: 'file_size_asc' \n * File size - Descending order: 'file_size_desc' \n ",
+                "parameters": [{
                         "name": "entry_type",
                         "in": "query",
-							  "description": "Type of item in list to be retrieved * 'documents' if there is no specification",
+                        "description": "Type of item in list to be retrieved * 'documents' if there is no specification",
                         "type": "string"
                     },
                     {
                         "name": "search_target",
                         "in": "query",
-							  "description": "If you do not specify keyword search or identifier designation * Please do not search and get all items",
+                        "description": "If you do not specify keyword search or identifier designation * Please do not search and get all items",
                         "type": "string"
                     },
                     {
                         "name": "annotation_type",
                         "in": "query",
-							  "description": "Annotation type * 'all' if not specified '",
+                        "description": "Annotation type * 'all' if not specified '",
                         "type": "string"
                     },
                     {
                         "name": "search_keyword",
                         "in": "query",
-							  "description": "Keyword or identifier * Required if search_target is specified, Ignore if not found",
+                        "description": "Keyword or identifier * Required if search_target is specified, Ignore if not found",
                         "type": "string"
                     },
                     {
                         "name": "origin_folder_id",
                         "in": "query",
-							  "description": "Folder ID for narrowing down only to items below the optional folder * 'root' if not specified",
+                        "description": "Folder ID for narrowing down only to items below the optional folder * 'root' if not specified",
                         "type": "string"
                     },
                     {
                         "name": "order_type",
                         "in": "query",
-							  "description": "sort order of list to be retrieved * 'reading_date_desc' if not specified",
+                        "description": "sort order of list to be retrieved * 'reading_date_desc' if not specified",
                         "type": "string"
                     },
                     {
                         "name": "offset",
                         "in": "query",
-"description": "Acquisition start position * If there is no designation, from the beginning ",
+                        "description": "Acquisition start position * If there is no designation, from the beginning ",
                         "type": "string"
                     },
                     {
                         "name": "limit",
                         "in": "query",
-"description": "The maximum number of items to be acquired in a single API call. \n If not specified, get the default number of items (1300). \n However, if the data size that matches the condition is too large \n In principle, limit should be specified. \n * limit specification reference value · · · Recommendation: 100 cases, upper limit: 1000 cases \n",
+                        "description": "The maximum number of items to be acquired in a single API call. \n If not specified, get the default number of items (1300). \n However, if the data size that matches the condition is too large \n In principle, limit should be specified. \n * limit specification reference value · · · Recommendation: 100 cases, upper limit: 1000 cases \n",
                         "type": "string"
                     },
                     {
                         "name": "fields",
                         "in": "query",
-"description": "Specify comma-separated items in 'commonEntryObjectResult' you want to retrieve * Return all items if not specified",
+                        "description": "Specify comma-separated items in 'commonEntryObjectResult' you want to retrieve * Return all items if not specified",
                         "type": "string"
                     }
                 ],
@@ -82,13 +81,13 @@
                         }
                     },
                     "400": {
-"description": "* [40001] Required parameter was not specified \n * [40002] Number specified parameter could not be recognized as numerical value \n * [40005] Specified character string other than prescribed option \n * [40006] Invalid parameter value was specified \n * [40012] Folder ID not specified in origin_folder_id was specified ",
+                        "description": "* [40001] Required parameter was not specified \n * [40002] Number specified parameter could not be recognized as numerical value \n * [40005] Specified character string other than prescribed option \n * [40006] Invalid parameter value was specified \n * [40012] Folder ID not specified in origin_folder_id was specified ",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -97,7 +96,7 @@
             },
             "post": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -108,18 +107,16 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** ★ Obsoleted use deprecated ★ ** __ * n ** New document registration ** \n * After that, upload the file to the generated document ID Needed \n ",
-                "parameters": [
-                    {
-                        "name": "doc_info",
-                        "in": "body",
-"description": "information of document to be registered",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/documentsPostRequest"
-                        }
+                "description": "** ★ Obsoleted use deprecated ★ ** __ * n ** New document registration ** \n * After that, upload the file to the generated document ID Needed \n ",
+                "parameters": [{
+                    "name": "doc_info",
+                    "in": "body",
+                    "description": "information of document to be registered",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/documentsPostRequest"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "Successful response",
@@ -128,19 +125,19 @@
                         }
                     },
                     "400": {
-"description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
+                        "description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "507": {
-"description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
+                        "description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -151,7 +148,7 @@
         "/documents2": {
             "get": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -159,85 +156,84 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** Get document list ** \n * entry_type Filter by item type \n * All (folder + document): 'all' \n * Document: 'documents' \n * 'Document_body' \n * Document body: 'document_body' \n * Document meta information (name, title, author): 'document_meta' \n * Document body: 'document_body' \n * Annotation preset Pattern string (★, *): 'annotation_pattern' \n * annotation_type Filter by annotation type \n <small> * search \ \ _ influence on result when 'annotation \\ _ pattern' is specified for target </ 'highlights' \n * handwriting: 'handwritings' \n * sort order specification of order_type list <br> \n <small> * Folders and documents are glue </ Small> \n * Name - Ascending: 'entry_name_asc' \n * Name - Descending order: 'entry_name_desc', which is pinged in ascending order as folders are batched first and descending documents are listed first 'created_date_desc' \n * Ascending order: 'modified_date_asc' \n * Edit date / time - descending order: 'modified_date_desc' \n * Last viewed 'Reading_date_desc' \n * ascending order: 'title_asc' \n * title - descending order: 'title_desc' \n * author - ascending: 'author_asc' \ ascending order: 'reading_date_asc' \n * n * Author - Descending order: 'author_desc' \n * File size - Ascending order: 'file_size_asc' \n * File size - Descending order: 'file_size_desc' \n ",
-                "parameters": [
-                    {
+                "description": "** Get document list ** n * entry_ty    pe Filter by item type n * All folder + document: all n * Document: documents n * Do    cument_body n * Document body: document_body n * Document meta information name, tit    le, author: document_meta n * Document body: document_body n * Annotation preset Pat    tern string ★, *: annotation_pattern n * annotation_type Filter by annotation type n     <small> * search   _ influence on result when annotation  _ pattern is specified fo    r target <cg highlights n * handwriting: handwritings n * sort order specification o    f order_type list <br> n <small> * Folders and documents are glue <cg Small> n * Nam    e - Ascending: entry_name_asc n * Name - Descending order: entry_name_desc, which is     pinged in ascending order as folders are batched first and descending documents are     listed first created_date_desc n * Ascending order: modified_date_asc n * Edit date     g time - descending order: modified_date_descn * Last viewed Reading_date_desc n *     ascending order: title_asc n * title - descending order: title_desc n * author - asc    ending: author_asc  ascending order: reading_date_asc n * n * Author - Descending or    der: author_desc n * File size - Ascending order: file_size_asc n * File size - Desc    ending order: file_size_desc n ",
+                "parameters": [{
                         "name": "entry_type",
                         "in": "query",
-"description": "Type of item in list to be retrieved * 'documents' if there is no specification,
+                        "description": "Type of item in list to be retrieved * 'documents' if there is no specification ",
                         "type": "string"
                     },
                     {
                         "name": "search_target",
                         "in": "query",
-"description": "If you do not specify keyword search or identifier designation * Please do not search and get all items",
+                        "description": "If you do not specify keyword search or identifier designation * Please do not search and get all items",
                         "type": "string"
                     },
                     {
                         "name": "annotation_type",
                         "in": "query",
-"description": "Annotation type * 'all' if not specified ',
+                        "description": "Annotation type * 'all' if not specified '",
                         "type": "string"
                     },
                     {
                         "name": "search_keyword",
                         "in": "query",
-"description": "Keyword or identifier * Required if search_target is specified, Ignore if not found"
+                        "description": "Keyword or identifier * Required if search_target is specified, Ignore if not found",
                         "type": "string"
                     },
                     {
                         "name": "origin_folder_id",
                         "in": "query",
-"description": "Folder ID for narrowing down only to items below the optional folder * 'root' if not specified,
-"type": "string"
+                        "description": "Folder ID for narrowing down only to items below the optional folder * 'root' if not specified",
+                        "type": "string"
                     },
                     {
                         "name": "order_type",
                         "in": "query",
-"description": "sort order of list to be retrieved * 'reading_date_desc' if not specified",
+                        "description": "sort order of list to be retrieved * 'reading_date_desc' if not specified",
                         "type": "string"
                     },
                     {
                         "name": "offset",
                         "in": "query",
-"description": "Acquisition start position * If there is no designation, from the beginning ",
+                        "description": "Acquisition start position * If there is no designation, from the beginning ",
                         "type": "string"
                     },
                     {
                         "name": "limit",
                         "in": "query",
-"description": "The maximum number of items to be acquired in a single API call. \n If not specified, get the default number of items (1300). \n However, if the data size that matches the condition is too large \n In principle, limit should be specified. \n * limit specification reference value · · · Recommendation: 100 cases, upper limit: 1000 cases ",
+                        "description": "The maximum number of items to be acquired in a single API call. \n If not specified, get the default number of items (1300). \n However, if the data size that matches the condition is too large \n In principle, limit should be specified. \n * limit specification reference value · · · Recommendation: 100 cases, upper limit: 1000 cases ",
                         "type": "string"
                     },
                     {
                         "name": "fields",
                         "in": "query",
-"description": "Specify comma-separated items in 'commonEntryObjectResult2' you want to retrieve * Return all items if not specified",
+                        "description": "Specify comma-separated items in 'commonEntryObjectResult2' you want to retrieve * Return all items if not specified",
                         "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
-"description": "success",
+                        "description": "success",
                         "schema": {
                             "$ref": "#/definitions/commonEntryListObjectResult2"
                         }
                     },
                     "400": {
-"description": "* [40001] Required parameter was not specified \n * [40002] Number specified parameter could not be recognized as numerical value \n * [40005] Specified character string other than prescribed option \n * [40006] Invalid parameter value was specified \n * [40012] Folder ID not specified in origin_folder_id was specified ",
+                        "description": "* [40001] Required parameter was not specified \n * [40002] Number specified parameter could not be recognized as numerical value \n * [40005] Specified character string other than prescribed option \n * [40006] Invalid parameter value was specified \n * [40012] Folder ID not specified in origin_folder_id was specified ",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "403": {
-"description": "* [40310] You do not have permission to read folders with the ID specified by origin_folder_id",
+                        "description": "* [40310] You do not have permission to read folders with the ID specified by origin_folder_id",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
-"schema": {
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     }
@@ -245,7 +241,7 @@
             },
             "post": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -256,45 +252,43 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** New Document Registration ** \n * After that, you need to upload the file to the generated document ID \n",
-                "parameters": [
-                    {
-                        "name": "doc_info",
-                        "in": "body",
-"description": "information of document to be registered",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/documentsPostRequest2"
-                        }
+                "description": "** New Document Registration ** \n * After that, you need to upload the file to the generated document ID \n",
+                "parameters": [{
+                    "name": "doc_info",
+                    "in": "body",
+                    "description": "information of document to be registered",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/documentsPostRequest2"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
-"description": "success"
+                        "description": "success",
                         "schema": {
                             "$ref": "#/definitions/commonDocumentIdObject2"
                         }
                     },
                     "400": {
-"description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
+                        "description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "403": {
-"description": "* [40310] You do not have permission to write to the folder with ID specified by parent_folder_id",
+                        "description": "* [40310] You do not have permission to write to the folder with ID specified by parent_folder_id",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "507": {
-"description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
+                        "description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -305,24 +299,22 @@
         "/documents/{document_id}": {
             "get": {
                 "tags": [
-"document"
-],
+                    "document"
+                ],
                 "schemes": [
                     "https"
                 ],
                 "produces": [
                     "application/json"
                 ],
-"description": "** ★ Obsoleted use deprecated ★ ** __ * n ** Acquire information on the document corresponding to the specified document ID ** \n",
-                "parameters": [
-                    {
-                        "name": "document_id",
-                        "in": "path",
-"description": "document ID",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "description": "** ★ Obsoleted use deprecated ★ ** __ * n ** Acquire information on the document corresponding to the specified document ID ** \n",
+                "parameters": [{
+                    "name": "document_id",
+                    "in": "path",
+                    "description": "document ID",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "Successful response",
@@ -331,13 +323,13 @@
                         }
                     },
                     "404": {
-"description": "* [40401] Document with the specified ID does not exist",
+                        "description": "* [40401] Document with the specified ID does not exist",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -346,7 +338,7 @@
             },
             "put": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -357,19 +349,18 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** ★ Obsoleted use deprecated ★ ** __ * n ** Document name change / move (document information update) ** \n",
-"parameters": [
-                    {
+                "description": "** ★ Obsoleted use deprecated ★ ** __ * n ** Document name change / move (document information update) ** \n",
+                "parameters": [{
                         "name": "document_id",
                         "in": "path",
-"description": "Document ID to update",
+                        "description": "Document ID to update",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "doc_update_info",
                         "in": "body",
-"description": "information of document to update",
+                        "description": "information of document to update",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/documentsDocumentIdPutRequest"
@@ -381,25 +372,25 @@
                         "description": "Successful response"
                     },
                     "400": {
-"description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
+                        "description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "404": {
-"description": "* [40401] Document with the specified ID does not exist",
-"schema": {
+                        "description": "* [40401] Document with the specified ID does not exist",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "507": {
-"description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
+                        "description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -408,7 +399,7 @@
             },
             "delete": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -416,19 +407,18 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** Delete Document ** \n",
-                "parameters": [
-                    {
+                "description": "** Delete Document ** \n",
+                "parameters": [{
                         "name": "document_id",
                         "in": "path",
-"description": "ID of document to delete",
+                        "description": "ID of document to delete",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "del_target_doc_info",
                         "in": "body",
-"description": "information of the document to be deleted",
+                        "description": "information of the document to be deleted",
                         "schema": {
                             "$ref": "#/definitions/documentsDocumentIdDeleteRequest"
                         }
@@ -439,19 +429,19 @@
                         "description": "Successful response"
                     },
                     "400": {
-"description": "* [40017] Can not operate because document revision has been updated",
+                        "description": "* [40017] Can not operate because document revision has been updated",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "404": {
-"description": "* [40401] Document with the specified ID does not exist",
+                        "description": "* [40401] Document with the specified ID does not exist",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -462,7 +452,7 @@
         "/documents2/{document_id}": {
             "get": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -470,37 +460,35 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** Get document information corresponding to specified document ID ** \n",
-                "parameters": [
-                    {
-                        "name": "document_id",
-"in": "path",
-"description": "document ID",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "description": "** Get document information corresponding to specified document ID ** \n",
+                "parameters": [{
+                    "name": "document_id",
+                    "in": "path",
+                    "description": "document ID",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
-"description": "success"
-"schema": {
+                        "description": "success",
+                        "schema": {
                             "$ref": "#/definitions/commonEntryObjectResult2"
                         }
                     },
                     "403": {
-"description": "* [40310] You do not have permission to read documents with the specified ID",
+                        "description": "* [40310] You do not have permission to read documents with the specified ID",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
-"404": {
-"description": "* [40401] Document with the specified ID does not exist",
+                    "404": {
+                        "description": "* [40401] Document with the specified ID does not exist",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -508,8 +496,8 @@
                 }
             },
             "put": {
-"tags": [
-"document"
+                "tags": [
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -518,22 +506,21 @@
                     "application/json"
                 ],
                 "produces": [
-"application/json"
-],
-"description": "** Name change / movement of document (update of document information) ** \n",
-                "parameters": [
-                    {
+                    "application/json"
+                ],
+                "description": "** Name change / movement of document (update of document information) ** \n",
+                "parameters": [{
                         "name": "document_id",
                         "in": "path",
-"description": "Document ID to update",
+                        "description": "Document ID to update",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "doc_update_info",
                         "in": "body",
-"description": "information of document to update",
-"required": true,
+                        "description": "information of document to update",
+                        "required": true,
                         "schema": {
                             "$ref": "#/definitions/documentsDocumentIdPutRequest2"
                         }
@@ -541,34 +528,34 @@
                 ],
                 "responses": {
                     "204": {
-"description": "successful"
+                        "description": "successful"
                     },
-"400": {
-"description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
-"schema": {
+                    "400": {
+                        "description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
-"403": {
-"description": "* [40310] You do not have permission to operate the document with the specified ID or you do not have permission to write to the folder with the ID specified by parent_folder_id",
-"schema": {
+                    "403": {
+                        "description": "* [40310] You do not have permission to operate the document with the specified ID or you do not have permission to write to the folder with the ID specified by parent_folder_id",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
-"404": {
-"description": "* [40401] Document with the specified ID does not exist",
-"schema": {
+                    "404": {
+                        "description": "* [40401] Document with the specified ID does not exist",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
-"408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                    "408": {
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "507": {
-"description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
+                        "description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -579,24 +566,22 @@
         "/documents/{document_id}/file": {
             "get": {
                 "tags": [
-"document"
-],
-"schemes": [
-"https"
-],
-"produces": [
-"application/pdf"
-],
-"description": "** Get the file entity of the document corresponding to the specified ID ** \n * ETag is set in the response header and divided download using it is possible.Etag contains the revision of the downloaded document ( Three elements are set, one calculated on Deneb side), a hash value of the download file, and a file hash of the document (calculated on the client side). ",
-                "parameters": [
-                    {
-                        "name": "document_id",
-"in": "path",
-"description": "Document ID",
-                        "required": true,
-                        "type": "string"
-                    }
+                    "document"
                 ],
+                "schemes": [
+                    "https"
+                ],
+                "produces": [
+                    "application/pdf"
+                ],
+                "description": "** Get the file entity of the document corresponding to the specified ID ** \n * ETag is set in the response header and divided download using it is possible.Etag contains the revision of the downloaded document ( Three elements are set, one calculated on Deneb side), a hash value of the download file, and a file hash of the document (calculated on the client side). ",
+                "parameters": [{
+                    "name": "document_id",
+                    "in": "path",
+                    "description": "Document ID",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "Successful response",
@@ -605,13 +590,13 @@
                         }
                     },
                     "404": {
-"description": "* [40401] Document with the specified ID does not exist",
+                        "description": "* [40401] Document with the specified ID does not exist",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -619,8 +604,8 @@
                 }
             },
             "put": {
-"tags": [
-"document"
+                "tags": [
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -631,44 +616,43 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** Upload file entity of document ** \n * Link file entity to specific document. \n * Overwrite existing document_id if it exists already. \n * Split upload is possible. \n ",
-                "parameters": [
-                    {
+                "description": "** Upload file entity of document ** \n * Link file entity to specific document. \n * Overwrite existing document_id if it exists already. \n * Split upload is possible. \n ",
+                "parameters": [{
                         "name": "document_id",
                         "in": "path",
-"description": "ID of document to be linked by uploading * Register document first and obtain ID",
+                        "description": "ID of document to be linked by uploading * Register document first and obtain ID",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "file",
                         "in": "formData",
-"description": "file entity",
+                        "description": "file entity",
                         "required": true,
                         "type": "file"
                     },
                     {
                         "name": "offset_bytes",
                         "in": "query",
-"description": "Specify when split uploading ※ For details see Instruction",
+                        "description": "Specify when split uploading ※ For details see Instruction",
                         "type": "string"
                     },
                     {
                         "name": "total_bytes",
                         "in": "query",
-"description": "Specify when split uploading ※ For details see Instruction",
+                        "description": "Specify when split uploading ※ For details see Instruction",
                         "type": "string"
                     },
                     {
                         "name": "target_revision",
                         "in": "query",
-"description": "The revision to upload the file entity to specify the latest revision that the client knows about. The document is updated in Deneb after grasping on the client side, and the revision value to be managed is specified If there is a state different from target_revision, return error, do not do revision check if target_revision is not specified, do not specify target_revision when new uploading. ",
+                        "description": "The revision to upload the file entity to specify the latest revision that the client knows about. The document is updated in Deneb after grasping on the client side, and the revision value to be managed is specified If there is a state different from target_revision, return error, do not do revision check if target_revision is not specified, do not specify target_revision when new uploading. ",
                         "type": "string"
                     },
                     {
                         "name": "file_hash",
                         "in": "query",
-"description": "Hash value of the file entity calculated on the client side.",
+                        "description": "Hash value of the file entity calculated on the client side.",
                         "type": "string"
                     }
                 ],
@@ -680,26 +664,26 @@
                         }
                     },
                     "400": {
-"description": "* [40001] Required parameter was not specified \n * [40002] Number specified parameter could not be recognized as numerical value \n * [40010] File not specified \n * 40011] Inconsistent with split upload \n * [40017] Can not operate because document revision has been updated ",
+                        "description": "* [40001] Required parameter was not specified \n * [40002] Number specified parameter could not be recognized as numerical value \n * [40010] File not specified \n * 40011] Inconsistent with split upload \n * [40017] Can not operate because document revision has been updated ",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "404": {
-"description": "* [40401] Document with the specified ID does not exist",
-"schema": {
-"$ref": "#/definitions/errorResult"
-}
-},
-"408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
-"schema": {
-"$ref": "#/definitions/errorResult"
-}
-},
-"507": {
-"description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
-"schema": {
+                        "description": "* [40401] Document with the specified ID does not exist",
+                        "schema": {
+                            "$ref": "#/definitions/errorResult"
+                        }
+                    },
+                    "408": {
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "schema": {
+                            "$ref": "#/definitions/errorResult"
+                        }
+                    },
+                    "507": {
+                        "description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     }
@@ -709,7 +693,7 @@
         "/documents/{document_id}/copy": {
             "post": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -720,20 +704,19 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** Duplicate document ** \n",
-                "parameters": [
-                    {
+                "description": "** Duplicate document ** \n",
+                "parameters": [{
                         "name": "document_id",
                         "in": "path",
-"description": "ID of source document",
+                        "description": "ID of source document",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "doc_copy_info",
                         "in": "body",
-"description": "Destination information",
-"required": true,
+                        "description": "Destination information",
+                        "required": true,
                         "schema": {
                             "$ref": "#/definitions/documentsDocumentIdCopyPostRequest"
                         }
@@ -747,25 +730,25 @@
                         }
                     },
                     "400": {
-"description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
+                        "description": "* [40001] Required parameter was not specified \n * [40006] Unsupported filename was specified \n * [40007] Unable to process due to name duplication \n * [40012 ] Folder ID not specified in parent_folder_id was specified ",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "404": {
-"description": "* [40401] Document with the specified ID does not exist",
-"schema": {
+                        "description": "* [40401] Document with the specified ID does not exist",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "507": {
-"description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
+                        "description": "* [50701] The processing could not be completed due to insufficient storage capacity on the main unit",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -776,7 +759,7 @@
         "/documents/{document_id}/attribute": {
             "get": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -784,37 +767,35 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** Obtaining document attribute information **",
-                "parameters": [
-                    {
-                        "name": "document_id",
-                        "in": "path",
-"description": "ID of the document that acquires the attribute",
-"required": true,
-                        "type": "string"
-                    }
-                ],
+                "description": "** Obtaining document attribute information **",
+                "parameters": [{
+                    "name": "document_id",
+                    "in": "path",
+                    "description": "ID of the document that acquires the attribute",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
-"200": {
-"description": "Document attribute information",
+                    "200": {
+                        "description": "Document attribute information",
                         "schema": {
                             "$ref": "#/definitions/documentAttributeObject2"
                         }
                     },
                     "403": {
-"description": "* [40310] You do not have permission to read documents with the specified ID",
+                        "description": "* [40310] You do not have permission to read documents with the specified ID",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "404": {
-"description": "* [40401] Document with the specified ID does not exist",
-"schema": {
+                        "description": "* [40401] Document with the specified ID does not exist",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
+                        "description": "* [40800] Processing did not complete within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -823,7 +804,7 @@
             },
             "put": {
                 "tags": [
-"document"
+                    "document"
                 ],
                 "schemes": [
                     "https"
@@ -834,12 +815,11 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** Set document attribute information ** \n * One 'action_performer' must be set to one of 'result', 'request', 'indicate' \n * Be careful not to "keep previous setting value" with omission or NULL specification, unlike other setting change APIs,
-                "parameters": [
-                    {
+                "description": "** Set document attribute information ** n * One action_performer must be set to one of result, request, indicate n * Be careful not to , keep previous setting value  with omission or NULL specification, unlike other setting change APIs ",
+                "parameters": [{
                         "name": "document_id",
                         "in": "path",
-"description": "ID of the document that acquires the attribute",
+                        "description": "ID of the document that acquires the attribute",
                         "required": true,
                         "type": "string"
                     },
@@ -900,15 +880,13 @@
                     "application/json"
                 ],
                 "description": "**ドキュメントの属性情報をクリアする**",
-                "parameters": [
-                    {
-                        "name": "document_id",
-                        "in": "path",
-                        "description": "属性をクリアするドキュメントのID",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "document_id",
+                    "in": "path",
+                    "description": "属性をクリアするドキュメントのID",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -949,17 +927,15 @@
                     "application/json"
                 ],
                 "description": "**★Obsoleted 使用非推奨★** <br/><br/>\n**フォルダーの新規作成**\n",
-                "parameters": [
-                    {
-                        "name": "folder_info",
-                        "in": "body",
-                        "description": "作成するフォルダーの情報",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/foldersPostRequest"
-                        }
+                "parameters": [{
+                    "name": "folder_info",
+                    "in": "body",
+                    "description": "作成するフォルダーの情報",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/foldersPostRequest"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "Successful response",
@@ -997,17 +973,15 @@
                     "application/json"
                 ],
                 "description": "**フォルダーの新規作成**\n",
-                "parameters": [
-                    {
-                        "name": "folder_info",
-                        "in": "body",
-                        "description": "作成するフォルダーの情報",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/foldersPostRequest2"
-                        }
+                "parameters": [{
+                    "name": "folder_info",
+                    "in": "body",
+                    "description": "作成するフォルダーの情報",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/foldersPostRequest2"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "成功",
@@ -1048,15 +1022,13 @@
                     "application/json"
                 ],
                 "description": "**★Obsoleted 使用非推奨★** <br/><br/>\n**指定IDに該当するフォルダーの情報を取得**\n",
-                "parameters": [
-                    {
-                        "name": "folder_id",
-                        "in": "path",
-                        "description": "フォルダーのID",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "folder_id",
+                    "in": "path",
+                    "description": "フォルダーのID",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "Successful response",
@@ -1092,8 +1064,7 @@
                     "application/json"
                 ],
                 "description": "**★Obsoleted 使用非推奨★** <br/><br/>\n**フォルダーの名称変更・移動 （フォルダーの情報更新）**\n",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "folder_id",
                         "in": "path",
                         "description": "更新するフォルダーのID",
@@ -1145,8 +1116,7 @@
                     "application/json"
                 ],
                 "description": "**フォルダーの削除**\n",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "folder_id",
                         "in": "path",
                         "description": "削除するフォルダーのID",
@@ -1199,15 +1169,13 @@
                     "application/json"
                 ],
                 "description": "**指定IDに該当するフォルダーの情報を取得**\n",
-                "parameters": [
-                    {
-                        "name": "folder_id",
-                        "in": "path",
-                        "description": "フォルダーのID",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "folder_id",
+                    "in": "path",
+                    "description": "フォルダーのID",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "成功",
@@ -1249,8 +1217,7 @@
                     "application/json"
                 ],
                 "description": "**フォルダーの名称変更・移動 （フォルダーの情報更新）**\n",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "folder_id",
                         "in": "path",
                         "description": "更新するフォルダーのID",
@@ -1310,8 +1277,7 @@
                     "application/json"
                 ],
                 "description": "**★Obsoleted 使用非推奨★** <br/><br/>\n**フォルダー内のエントリー一覧を取得**  \n * order_type　一覧のソート順指定<br>\n   <small>※フォルダーとドキュメントはグルーピングされ、昇順の場合はフォルダーがまとめて先に、降順の場合はドキュメントがまとめて先に列挙される</small>\n  * 名前-昇順 : 'entry_name_asc'\n  * 名前-降順 : 'entry_name_desc'\n  * 作成日時-昇順 : 'created_date_asc'\n  * 作成日時-降順 : 'created_date_desc'\n  * 編集日時-昇順 : 'modified_date_asc'\n  * 編集日時-降順 : 'modified_date_desc'\n  * 最終閲覧日時-昇順 : 'reading_date_asc'\n  * 最終閲覧日時-降順 : 'reading_date_desc'\n  * タイトル-昇順 : 'title_asc'\n  * タイトル-降順 : 'title_desc'\n  * 著者-昇順 : 'author_asc'\n  * 著者-降順 : 'author_desc'\n  * ファイルサイズ-昇順 : 'file_size_asc'\n  * ファイルサイズ-降順 : 'file_size_desc'\n",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "folder_id",
                         "in": "path",
                         "description": "エントリー一覧を取得するフォルダーのID",
@@ -1383,8 +1349,7 @@
                     "application/json"
                 ],
                 "description": "**フォルダー内のエントリー一覧を取得**  \n * order_type　一覧のソート順指定<br>\n   <small>※フォルダーとドキュメントはグルーピングされ、昇順の場合はフォルダーがまとめて先に、降順の場合はドキュメントがまとめて先に列挙される</small>\n  * 名前-昇順 : 'entry_name_asc'\n  * 名前-降順 : 'entry_name_desc'\n  * 作成日時-昇順 : 'created_date_asc'\n  * 作成日時-降順 : 'created_date_desc'\n  * 編集日時-昇順 : 'modified_date_asc'\n  * 編集日時-降順 : 'modified_date_desc'\n  * 最終閲覧日時-昇順 : 'reading_date_asc'\n  * 最終閲覧日時-降順 : 'reading_date_desc'\n  * タイトル-昇順 : 'title_asc'\n  * タイトル-降順 : 'title_desc'\n  * 著者-昇順 : 'author_asc'\n  * 著者-降順 : 'author_desc'\n  * ファイルサイズ-昇順 : 'file_size_asc'\n  * ファイルサイズ-降順 : 'file_size_desc'\n",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "folder_id",
                         "in": "path",
                         "description": "エントリー一覧を取得するフォルダーのID",
@@ -1491,17 +1456,15 @@
                     "application/json"
                 ],
                 "description": "**ノートテンプレート情報の作成**\n * ここではノートテンプレート情報の作成のみ行う。\n * 本APIでノートテンプレート情報を作成後、それに対してノートテンプレートファイル実体を「/viewer/configs/note_templates/{note_template_id}/file」にて紐付ける必要がある。\n",
-                "parameters": [
-                    {
-                        "name": "note_template_info",
-                        "in": "body",
-                        "description": "作成するノートテンプレートの情報",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/viewerConfigsNoteTemplatePostRequest"
-                        }
+                "parameters": [{
+                    "name": "note_template_info",
+                    "in": "body",
+                    "description": "作成するノートテンプレートの情報",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/viewerConfigsNoteTemplatePostRequest"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "Successful response",
@@ -1541,15 +1504,13 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [
-                    {
-                        "name": "note_template_id",
-                        "in": "path",
-                        "description": "取得するノートテンプレートのID",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "note_template_id",
+                    "in": "path",
+                    "description": "取得するノートテンプレートのID",
+                    "required": true,
+                    "type": "string"
+                }],
                 "description": "**ノートテンプレートの情報取得**\n",
                 "responses": {
                     "200": {
@@ -1586,8 +1547,7 @@
                     "application/json"
                 ],
                 "description": "**ノートテンプレートの情報を更新**\n",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "note_template_id",
                         "in": "path",
                         "description": "更新するノートテンプレートのID",
@@ -1645,15 +1605,13 @@
                     "application/json"
                 ],
                 "description": "**ノートテンプレートの削除**\n",
-                "parameters": [
-                    {
-                        "name": "note_template_id",
-                        "in": "path",
-                        "description": "削除するノートテンプレートのID",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "note_template_id",
+                    "in": "path",
+                    "description": "削除するノートテンプレートのID",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "204": {
                         "description": "Successful response"
@@ -1694,8 +1652,7 @@
                     "application/json"
                 ],
                 "description": "**ノートテンプレート実体のアップロード**\n * 特定のノートテンプレートに対してファイル実体を紐づける。\n * 既にnote_template_idに紐づくファイルが存在した場合は上書きする。\n * 分割アップロードが可能\n",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "note_template_id",
                         "in": "path",
                         "description": "アップロードして紐づけるノートテンプレートのID ※先にノートテンプレート登録を行い、IDを取得",
@@ -1793,17 +1750,15 @@
                     "application/json"
                 ],
                 "description": "**★Obsoleted 使用非推奨★** <br/><br/>\n**指定ドキュメントを開く**\n",
-                "parameters": [
-                    {
-                        "name": "target_doc_info",
-                        "in": "body",
-                        "description": "開く対象のドキュメントの情報",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/viewerControlsOpenPutRequest"
-                        }
+                "parameters": [{
+                    "name": "target_doc_info",
+                    "in": "body",
+                    "description": "開く対象のドキュメントの情報",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/viewerControlsOpenPutRequest"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "Successful response"
@@ -1844,17 +1799,15 @@
                     "application/json"
                 ],
                 "description": "**指定ドキュメントを開く**\n * ページ番号は省略可能。その場合、開かれるページは端末側にオマカセ。\n * ページ番号が 0 もしくは負の値を指定した場合はエラー。\n * ページ番号がそのドキュメントの総ページ数より大きい値の場合は、最終ページが開く。",
-                "parameters": [
-                    {
-                        "name": "target_doc_info",
-                        "in": "body",
-                        "description": "開く対象のドキュメントの情報",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/viewerControlsOpenPutRequest2"
-                        }
+                "parameters": [{
+                    "name": "target_doc_info",
+                    "in": "body",
+                    "description": "開く対象のドキュメントの情報",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/viewerControlsOpenPutRequest2"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -1971,17 +1924,15 @@
                     "application/json"
                 ],
                 "description": "タイムゾーンを設定する",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "タイムゾーンID ※詳細はInstructionを参照の事",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "タイムゾーンID ※詳細はInstructionを参照の事",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2010,17 +1961,15 @@
                     "application/json"
                 ],
                 "description": "現在の日時を設定する",
-                "parameters": [
-                    {
-                        "name": "datetime",
-                        "in": "body",
-                        "description": "ISO8601 フォーマットの日時情報",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "datetime",
+                    "in": "body",
+                    "description": "ISO8601 フォーマットの日時情報",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2069,17 +2018,15 @@
                     "application/json"
                 ],
                 "description": "日付表記形式を設定する",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "日付パターン文字列 ※詳細はInstructionを参照の事",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "日付パターン文字列 ※詳細はInstructionを参照の事",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2128,17 +2075,15 @@
                     "application/json"
                 ],
                 "description": "日付表記形式を設定する",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "以下のどれかを文字列で指定する\n * '12hour' : 12時間表記\n * '24hour' : 24時間表記",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "以下のどれかを文字列で指定する\n * '12hour' : 12時間表記\n * '24hour' : 24時間表記",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2187,17 +2132,15 @@
                     "application/json"
                 ],
                 "description": "初期設定完了フラグを設定する",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "初期化後 'initialized' 設定解除なら 'none'",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "初期化後 'initialized' 設定解除なら 'none'",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2246,17 +2189,15 @@
                     "application/json"
                 ],
                 "description": "スリープに入る時間を設定する",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "設定時間を分単位で数値を指定<br>\nスリープに入らない時は 'never'",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "設定時間を分単位で数値を指定<br>\nスリープに入らない時は 'never'",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2305,17 +2246,15 @@
                     "application/json"
                 ],
                 "description": "所有者名情報を設定する",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "所有者名(JSONエスケープ)",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "所有者名(JSONエスケープ)",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2432,17 +2371,15 @@
                     "application/json"
                 ],
                 "description": "画面上に各種通知用ダイアログを表示する",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "ダイアログのパラメータ",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/indicationInfoObject2"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "ダイアログのパラメータ",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/indicationInfoObject2"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2471,8 +2408,7 @@
                     "application/json"
                 ],
                 "description": "画面上に各種通知用ダイアログを表示する<br>\n※識別子はUUID形式であれば任意なものを指定可能<br>\n※以前指定したのと同じ識別子を指定した場合は、対応するダイアログの情報を上書きする",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "indication_id",
                         "in": "path",
                         "description": "識別子(UUID形式)",
@@ -2512,15 +2448,13 @@
                     "application/json"
                 ],
                 "description": "画面上に表示されている、指定した識別子に対応する各種通知用ダイアログを非表示にする<br>\n※指定した識別子に対応するダイアログが、ユーザー操作等により非表示だった場合でも、エラーとならずに成功となる",
-                "parameters": [
-                    {
-                        "name": "indication_id",
-                        "in": "path",
-                        "description": "表示時に指定した識別子(UUID形式)",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "indication_id",
+                    "in": "path",
+                    "description": "表示時に指定した識別子(UUID形式)",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2627,8 +2561,7 @@
                     "application/json"
                 ],
                 "description": "本体にファームウェアのイメージファイルを転送する<br>\n* 分割アップロードが可能\n* offset_bytes に 0 を指定してリクエストした場合、そのクライアントのIDがサーバ側で保持される\n* offset_bytes に 0 より大きい値を指定してリクエストした場合、サーバ側で保持しているIDと一致するクライアントからでなければ 503 応答を返す",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "file",
                         "in": "formData",
                         "description": "ファイル実体",
@@ -2731,17 +2664,15 @@
                     "application/json"
                 ],
                 "description": "本体の Wi-Fi 機能利用 ON/OFF 状態を設定する",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "'on'で有効、'off'で無効",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "'on'で有効、'off'で無効",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -2810,8 +2741,7 @@
                     "application/json"
                 ],
                 "description": "指定した SSID の登録済みアクセスポイントの設定を取得する",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "ssid",
                         "in": "path",
                         "description": "SSID を URL encode したもの、文字コードは UTF-8",
@@ -2861,8 +2791,7 @@
                     "application/json"
                 ],
                 "description": "登録済みアクセスポイントの削除\n",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "ssid",
                         "in": "path",
                         "description": "SSID を URL encode したもの、文字コードは UTF-8",
@@ -2950,17 +2879,15 @@
                     "application/json"
                 ],
                 "description": "EAP 用 CA 証明書の新規インストール<br>\n証明書名が同一のものがインストール済みの場合は上書きされる",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "EAP 用 CA 証明書情報",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/caCertificatesFileObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "EAP 用 CA 証明書情報",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/caCertificatesFileObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -3009,17 +2936,15 @@
                     "application/json"
                 ],
                 "description": "EAP 用 TLS クライアント証明書の新規インストール<br>\n証明書名が同一のものがインストール済みの場合は上書きされる",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "EAP 用 TLS クライアント証明書情報",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/clientCertificatesFileObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "EAP 用 TLS クライアント証明書情報",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/clientCertificatesFileObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -3137,34 +3062,32 @@
         },
         "/system/controls/wifi_accesspoints/register": {
             "put": {
-                "tags": [ "Setting - wireless control" ],
-                "schemes": [ "https" ],
-                "consumes": [ "application/json" ],
-                "produces": [ "application/json" ],
-"description": "Request to connect to the access point after new Wi-Fi access point registration or change of registered access point setting \n * Access point with the same SSID and same encryption method already registered \n * static_address, gateway, network_mask, dns1, dns2 are mandatory if \n * dhcp is 'false' \n (static_address, network_mask, dns1 is not empty, gateway, dns2 Proxy_port is required (empty character is acceptable) \n * If eap, eap_phase 2, eap_id, eap_idid, eap_cacert, eap_cert are required if security is 'eap'. \n * If proxy is 'true', proxy_host and proxy_port are required (Null character is acceptable.) \n * When changing the setting of registered access point, specify all items that have not been changed \n * exceptionally passwd only, unmodified or empty character 'no change' Interpret",
-                "parameters": [
-                    {
-                        "name": "ap",
-                        "in": "body",
-"description": "Access point setting content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/apConfigureObject"
-                        }
+                "tags": ["Setting - wireless control"],
+                "schemes": ["https"],
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "description": "Request to connect to the access point after new Wi-Fi access point registration or change of registered access point setting \n * Access point with the same SSID and same encryption method already registered \n * static_address, gateway, network_mask, dns1, dns2 are mandatory if \n * dhcp is 'false' \n (static_address, network_mask, dns1 is not empty, gateway, dns2 Proxy_port is required (empty character is acceptable) \n * If eap, eap_phase 2, eap_id, eap_idid, eap_cacert, eap_cert are required if security is 'eap'. \n * If proxy is 'true', proxy_host and proxy_port are required (Null character is acceptable.) \n * When changing the setting of registered access point, specify all items that have not been changed \n * exceptionally passwd only, unmodified or empty character 'no change' Interpret",
+                "parameters": [{
+                    "name": "ap",
+                    "in": "body",
+                    "description": "Access point setting content",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/apConfigureObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
                     },
                     "400": {
-"description": "* [40000] Failed to parse JSON \n * [40001] mandatory parameter was not specified \n * [40002] Numeric parameter was not recognized as numerical value \n * 40003] Failed to decode Base64 \n * [40005] A character string other than the prescribed option was specified \n * [40006] Incorrect parameter value was specified \n * [40008] Registerable access The maximum number of points has been reached ",
+                        "description": "* [40000] Failed to parse JSON \n * [40001] mandatory parameter was not specified \n * [40002] Numeric parameter was not recognized as numerical value \n * 40003] Failed to decode Base64 \n * [40005] A character string other than the prescribed option was specified \n * [40006] Incorrect parameter value was specified \n * [40008] Registerable access The maximum number of points has been reached ",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "403": {
-"description": "* [40304] Can not process because Wi-Fi is OFF",
+                        "description": "* [40304] Can not process because Wi-Fi is OFF",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -3175,27 +3098,27 @@
         "/system/controls/wps_start/button": {
             "put": {
                 "tags": [
-"Setting - wireless control"
+                    "Setting - wireless control"
                 ],
                 "schemes": [
                     "https"
                 ],
                 "produces": [
                     "application/json"
-],
-"description": "Wi-Fi registration initiated by Wi-Fi Protected Setup & trade (WPS) (button type, asynchronous)",
+                ],
+                "description": "Wi-Fi registration initiated by Wi-Fi Protected Setup & trade (WPS) (button type, asynchronous)",
                 "responses": {
                     "204": {
-"description": "Success (registration sequence started)"
+                        "description": "Success (registration sequence started)"
                     },
                     "403": {
-"description": "* [40304] Can not process because Wi-Fi is OFF",
+                        "description": "* [40304] Can not process because Wi-Fi is OFF",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "503": {
-"description": "* [50301] Processing that can not be done at the same time is being executed and can not respond to requests",
+                        "description": "* [50301] Processing that can not be done at the same time is being executed and can not respond to requests",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -3214,28 +3137,28 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Wi-Fi registration start (PIN type, asynchronous) by Wi-Fi Protected Setup & trade; (WPS)",
+                "description": "Wi-Fi registration start (PIN type, asynchronous) by Wi-Fi Protected Setup & trade; (WPS)",
                 "responses": {
                     "200": {
-"description": "Registration sequence started, Get PIN",
+                        "description": "Registration sequence started, Get PIN",
                         "schema": {
                             "$ref": "#/definitions/commonValueObject"
                         }
                     },
                     "403": {
-"description": "* [40304] Can not process because Wi-Fi is OFF",
+                        "description": "* [40304] Can not process because Wi-Fi is OFF",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "408": {
-"description": "* [40800] PIN could not be acquired within the assumed time (60 seconds)",
+                        "description": "* [40800] PIN could not be acquired within the assumed time (60 seconds)",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     },
                     "503": {
-"description": "* [50301] Processing that can not be done at the same time is being executed and can not respond to requests",
+                        "description": "* [50301] Processing that can not be done at the same time is being executed and can not respond to requests",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -3254,14 +3177,14 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Manual cancellation of Wi-Fi registration by Wi-Fi Protected Setup & trade ((WPS)",
+                "description": "Manual cancellation of Wi-Fi registration by Wi-Fi Protected Setup & trade ((WPS)",
                 "responses": {
                     "204": {
-"description": "Success (stop registration sequence)"
+                        "description": "Success (stop registration sequence)"
                     },
                     "403": {
-"description": "* [40304] Can not process because Wi-Fi is OFF",
-"schema": {
+                        "description": "* [40304] Can not process because Wi-Fi is OFF",
+                        "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
                     }
@@ -3271,7 +3194,7 @@
         "/register/serial_number": {
             "get": {
                 "tags": [
-"Client registration"
+                    "Client registration"
                 ],
                 "schemes": [
                     "http",
@@ -3280,10 +3203,10 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Get body serial number <br> \n <small> * Enable HTTP communication </ small>",
+                "description": "Get body serial number <br> \n <small> * Enable HTTP communication </ small>",
                 "responses": {
                     "200": {
-"description": "body serial number",
+                        "description": "body serial number",
                         "schema": {
                             "$ref": "#/definitions/commonValueObject"
                         }
@@ -3303,10 +3226,10 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Getting various information on the main unit <br> \n <small> * Enable HTTP communication </ small>",
+                "description": "Getting various information on the main unit <br> \n <small> * Enable HTTP communication </ small>",
                 "responses": {
                     "200": {
-"description": "various information on the main body",
+                        "description": "various information on the main body",
                         "schema": {
                             "$ref": "#/definitions/deviceInformationResult"
                         }
@@ -3353,17 +3276,15 @@
                     "application/json"
                 ],
                 "description": "クライアント登録シーケンスその2<br>\n<small>※HTTP通信が可能、詳しくは別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
-                "parameters": [
-                    {
-                        "name": "M2",
-                        "in": "body",
-                        "description": "M2<br><small>※別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonRegisterObject"
-                        }
+                "parameters": [{
+                    "name": "M2",
+                    "in": "body",
+                    "description": "M2<br><small>※別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonRegisterObject"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "M3<br><small>※別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
@@ -3402,17 +3323,15 @@
                     "application/json"
                 ],
                 "description": "クライアント登録シーケンスその3<br>\n<small>※HTTP通信が可能、詳しくは別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
-                "parameters": [
-                    {
-                        "name": "M4",
-                        "in": "body",
-                        "description": "M4<br><small>※別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonRegisterObject"
-                        }
+                "parameters": [{
+                    "name": "M4",
+                    "in": "body",
+                    "description": "M4<br><small>※別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonRegisterObject"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "M5<br><small>※別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
@@ -3451,17 +3370,15 @@
                     "application/json"
                 ],
                 "description": "クライアント登録シーケンスその4<br>\n<small>※HTTP通信が可能、詳しくは別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
-                "parameters": [
-                    {
-                        "name": "M6",
-                        "in": "body",
-                        "description": "M6<br><small>※別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonRegisterObject"
-                        }
+                "parameters": [{
+                    "name": "M6",
+                    "in": "body",
+                    "description": "M6<br><small>※別紙 'クライアント登録用WebAPI補足.pptx' 参照</small>",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonRegisterObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "登録完了"
@@ -3493,16 +3410,16 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Client registration sequence part 1 (for DCSS) <br> \n <small> * HTTP communication is possible, see the attachment 'WebAPI supplement for DCSS registration .pptx' reference </ small>",
+                "description": "Client registration sequence part 1 (for DCSS) <br> \n <small> * HTTP communication is possible, see the attachment 'WebAPI supplement for DCSS registration .pptx' reference </ small>",
                 "responses": {
                     "200": {
-"description": "M5 <br> <small> ※ Other paper DCSS login WebAPI make up. Pptx 'reference </ small>
+                        "description": "M5 <br> <small> ※ Other paper DCSS login WebAPI make up. Pptx 'reference </ small>",
                         "schema": {
                             "$ref": "#/definitions/commonRegisterObject"
                         }
                     },
                     "403": {
-"description": "* [40301] There is a problem with the verification result of the parameter based on the registration sequence \n * [40305] It is necessary to restart the registration sequence from the beginning due to the retry limit / time limit"
+                        "description": "* [40301] There is a problem with the verification result of the parameter based on the registration sequence \n * [40305] It is necessary to restart the registration sequence from the beginning due to the retry limit / time limit",
                         "schema": {
                             "$ref": "#/definitions/errorResult"
                         }
@@ -3526,17 +3443,15 @@
                     "application/json"
                 ],
                 "description": "クライアント登録シーケンスその2 (DCSS向け)<br>\n<small>※HTTP通信が可能、詳しくは別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
-                "parameters": [
-                    {
-                        "name": "M2",
-                        "in": "body",
-                        "description": "M2<br><small>※別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonRegisterObject"
-                        }
+                "parameters": [{
+                    "name": "M2",
+                    "in": "body",
+                    "description": "M2<br><small>※別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonRegisterObject"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "M3<br><small>※別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
@@ -3575,17 +3490,15 @@
                     "application/json"
                 ],
                 "description": "クライアント登録シーケンスその3 (DCSS向け)<br>\n<small>※HTTP通信が可能、詳しくは別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
-                "parameters": [
-                    {
-                        "name": "M4",
-                        "in": "body",
-                        "description": "M4<br><small>※別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonRegisterObject"
-                        }
+                "parameters": [{
+                    "name": "M4",
+                    "in": "body",
+                    "description": "M4<br><small>※別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonRegisterObject"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "M5<br><small>※別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
@@ -3624,17 +3537,15 @@
                     "application/json"
                 ],
                 "description": "クライアント登録シーケンスその4 (DCSS向け)<br>\n<small>※HTTP通信が可能、詳しくは別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
-                "parameters": [
-                    {
-                        "name": "M6",
-                        "in": "body",
-                        "description": "M6<br><small>※別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonRegisterObject"
-                        }
+                "parameters": [{
+                    "name": "M6",
+                    "in": "body",
+                    "description": "M6<br><small>※別紙 'DCSS登録用WebAPI補足.pptx' 参照</small>",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonRegisterObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "登録完了"
@@ -3666,8 +3577,8 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Instruct clearing display of main screen related to client registration sequence",
-"responses": {
+                "description": "Instruct clearing display of main screen related to client registration sequence",
+                "responses": {
                     "204": {
                         "description": "結果に依らず応答"
                     }
@@ -3686,15 +3597,13 @@
                     "application/json"
                 ],
                 "description": "Nonce (ワンタイムトークン) を取得する",
-                "parameters": [
-                    {
-                        "name": "client_id",
-                        "in": "path",
-                        "description": "クライアントの識別子",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "client_id",
+                    "in": "path",
+                    "description": "クライアントの識別子",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "Nonce (ワンタイムトークン) 情報",
@@ -3725,17 +3634,15 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "To authenticate <br> \nnonce_signed, specify Nonce (one-time token) digitally signed with SHA 256 signature algorithm using K_PRIV_C (client's private key)",
-                "parameters": [
-                    {
-                        "name": "auth_info",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/authPutRequest"
-                        }
+                "description": "To authenticate <br> \nnonce_signed, specify Nonce (one-time token) digitally signed with SHA 256 signature algorithm using K_PRIV_C (client's private key)",
+                "parameters": [{
+                    "name": "auth_info",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/authPutRequest"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "認証に成功"
@@ -3766,10 +3673,10 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Obtain a list of state values (for extended applications)",
+                "description": "Obtain a list of state values (for extended applications)",
                 "responses": {
                     "200": {
-"description": "List of various state values <br> (JSON attribute name 'item 1, item 2 ...' changes dynamically)",
+                        "description": "List of various state values <br> (JSON attribute name 'item 1, item 2 ...' changes dynamically)",
                         "schema": {
                             "$ref": "#/definitions/extensionsStatusGetResult"
                         }
@@ -3789,15 +3696,13 @@
                     "application/json"
                 ],
                 "description": "(拡張アプリ向け) 状態値を取得する",
-                "parameters": [
-                    {
-                        "name": "item",
-                        "in": "path",
-                        "description": "状態項目名",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "item",
+                    "in": "path",
+                    "description": "状態項目名",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "指定された状態項目の状態値",
@@ -3825,7 +3730,7 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Obtain a list of setting values (for extended applications)",
+                "description": "Obtain a list of setting values (for extended applications)",
                 "responses": {
                     "200": {
                         "description": "各種設定値の一覧<br>(JSONの属性名 'item1, item2...' は動的に変化する)",
@@ -3848,15 +3753,13 @@
                     "application/json"
                 ],
                 "description": "(拡張アプリ向け) 設定値を取得する",
-                "parameters": [
-                    {
-                        "name": "item",
-                        "in": "path",
-                        "description": "設置項目名",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "item",
+                    "in": "path",
+                    "description": "設置項目名",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "指定された設定項目の設定値",
@@ -3886,8 +3789,7 @@
                     "application/json"
                 ],
                 "description": "(拡張アプリ向け) 指定した内容で設定を変更する",
-                "parameters": [
-                    {
+                "parameters": [{
                         "name": "item",
                         "in": "path",
                         "description": "設定項目名",
@@ -3934,10 +3836,10 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Acquire Nonce (One Time Token) for Test Mode Dedicated Authentication",
+                "description": "Acquire Nonce (One Time Token) for Test Mode Dedicated Authentication",
                 "responses": {
                     "200": {
-"description": "Nonce (one time token) information",
+                        "description": "Nonce (one time token) information",
                         "schema": {
                             "$ref": "#/definitions/commonNonceObjectResult"
                         }
@@ -3965,17 +3867,15 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "To do authentication exclusively for test mode <br> <br> # nonce_signed specifies Nonce (one-time token) digitally signed with SHA 256 signature algorithm using K_PRIV_DT (secret key of client dedicated to test mode) ",
-                "parameters": [
-                    {
-                        "name": "auth_info",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/specialAuthPutRequest"
-                        }
+                "description": "To do authentication exclusively for test mode <br> <br> # nonce_signed specifies Nonce (one-time token) digitally signed with SHA 256 signature algorithm using K_PRIV_DT (secret key of client dedicated to test mode) ",
+                "parameters": [{
+                    "name": "auth_info",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/specialAuthPutRequest"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "認証に成功"
@@ -4012,7 +3912,7 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Test mode UI display",
+                "description": "Test mode UI display",
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -4037,7 +3937,7 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Restart main unit in recovery mode",
+                "description": "Restart main unit in recovery mode",
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -4064,16 +3964,14 @@
                     "text/plain",
                     "application/json"
                 ],
-"description": "Acquire file entity or folder information in the test mode dedicated storage area",
-                "parameters": [
-                    {
-                        "name": "path",
-                        "in": "path",
-                        "description": "ファイル/フォルダーの相対パスをURLエンコードしたもの<br>\nデコードした結果の末尾が'/'の場合は、フォルダー情報を要求されたと判断",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "description": "Acquire file entity or folder information in the test mode dedicated storage area",
+                "parameters": [{
+                    "name": "path",
+                    "in": "path",
+                    "description": "ファイル/フォルダーの相対パスをURLエンコードしたもの<br>\nデコードした結果の末尾が'/'の場合は、フォルダー情報を要求されたと判断",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "* ファイル指定の場合、指定ファイルの実体\n* フォルダー指定の場合、指定フォルダー内のファイルとフォルダーの一覧をtext/plainで返す<br>\n  (一覧について、末尾に '/' があればフォルダー、なければファイルを表す)",
@@ -4114,12 +4012,11 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Upload files or create folders within the test mode dedicated storage area <br> \ n Folders up to the middle of the specified path will be generated automatically when appropriate. \ \ n Something on the same path If it is a file or a folder, it is overwritten after deleting it without asking questions ",
-                "parameters": [
-                    {
+                "description": "Upload files or create folders within the test mode dedicated storage area <br> \n Folders up to the middle of the specified path will be generated automatically when appropriate. \n Something on the same path If it is a file or a folder, it is overwritten after deleting it without asking questions ",
+                "parameters": [{
                         "name": "path",
                         "in": "path",
-"description": "URL-encoded relative path of file / folder <br> \ nThe result of decode is '/', judge that folder creation was requested"
+                        "description": "URL-encoded relative path of file / folder <br> \nThe result of decode is '/', judge that folder creation was requested",
                         "required": true,
                         "type": "string"
                     },
@@ -4159,15 +4056,13 @@
                     "application/json"
                 ],
                 "description": "テストモード専用ストレージ領域内のファイル/フォルダーを削除<br>\nフォルダーを指定した場合は、そのフォルダー以下を再帰的に削除",
-                "parameters": [
-                    {
-                        "name": "path",
-                        "in": "path",
-                        "description": "ファイル/フォルダーの相対パスをURLエンコードしたもの<br>\nデコードした結果の末尾が'/'の場合は、フォルダー削除を要求されたと判断",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "parameters": [{
+                    "name": "path",
+                    "in": "path",
+                    "description": "ファイル/フォルダーの相対パスをURLエンコードしたもの<br>\nデコードした結果の末尾が'/'の場合は、フォルダー削除を要求されたと判断",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -4204,7 +4099,7 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Acquire Nonce (one-time token) for kitting-only authentication",
+                "description": "Acquire Nonce (one-time token) for kitting-only authentication",
                 "responses": {
                     "200": {
                         "description": "Nonce (ワンタイムトークン) 情報",
@@ -4235,17 +4130,15 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "To do authentication exclusively for kitting \ nnonce_signed, specify Nonce (one time token) digitally signed with SHA256 signature algorithm using K_PRIV_DK (secret key of client dedicated to test mode) ,
-                "parameters": [
-                    {
-                        "name": "auth_info",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/specialAuthPutRequest"
-                        }
+                "description": "To do authentication exclusively for kitting \nnonce_signed, specify Nonce (one time token) digitally signed with SHA256 signature algorithm using K_PRIV_DK (secret key of client dedicated to test mode) ",
+                "parameters": [{
+                    "name": "auth_info",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/specialAuthPutRequest"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "認証に成功"
@@ -4283,17 +4176,15 @@
                     "text/plain",
                     "application/json"
                 ],
-"description": "Set DCSS URL and registration code beforehand in order to register DCSS with kitting",
-"parameters": [
-                    {
-                        "name": "code_info",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/kittingRegisterCodeRequest"
-                        }
+                "description": "Set DCSS URL and registration code beforehand in order to register DCSS with kitting",
+                "parameters": [{
+                    "name": "code_info",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/kittingRegisterCodeRequest"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -4356,16 +4247,14 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "** ★ Obsoleted use deprecated ★ ** __ * \ n Get entry information from the full path of the document / folder <br> \ n * Change the root folder to 'Document /' Be careful with expressing ",
-                "parameters": [
-                    {
-                        "name": "path",
-                        "in": "path",
-                        "description": "ドキュメント/フォルダーのフルパスをURLエンコードしたもの",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "description": "** ★ Obsoleted use deprecated ★ ** __ * \n Get entry information from the full path of the document / folder <br> \n * Change the root folder to 'Document /' Be careful with expressing ",
+                "parameters": [{
+                    "name": "path",
+                    "in": "path",
+                    "description": "ドキュメント/フォルダーのフルパスをURLエンコードしたもの",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "エントリー情報",
@@ -4393,16 +4282,14 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Get entry information from full path of document / folder <br> \ n * Note that root folder is represented as 'Document /'",
-                "parameters": [
-                    {
-                        "name": "path",
-                        "in": "path",
-                        "description": "ドキュメント/フォルダーのフルパスをURLエンコードしたもの",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "description": "Get entry information from full path of document / folder <br> \n * Note that root folder is represented as 'Document /'",
+                "parameters": [{
+                    "name": "path",
+                    "in": "path",
+                    "description": "ドキュメント/フォルダーのフルパスをURLエンコードしたもの",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "エントリー情報",
@@ -4436,16 +4323,14 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Retrieve the list of entry information for which the specified external ID is set <br> \ n * Entries that do not have read permission are not included in the list (no error) <br> \ n * If there is no corresponding entry, respond with an empty list ",
-                "parameters": [
-                    {
-                        "name": "ext_id",
-                        "in": "path",
-                        "description": "外部IDをURLエンコードしたもの",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
+                "description": "Retrieve the list of entry information for which the specified external ID is set <br> \n * Entries that do not have read permission are not included in the list (no error) <br> \n * If there is no corresponding entry, respond with an empty list ",
+                "parameters": [{
+                    "name": "ext_id",
+                    "in": "path",
+                    "description": "外部IDをURLエンコードしたもの",
+                    "required": true,
+                    "type": "string"
+                }],
                 "responses": {
                     "200": {
                         "description": "エントリー情報のリスト",
@@ -4470,18 +4355,16 @@
                 "produces": [
                     "application/json"
                 ],
-"description": "Notify results of DCSS login processing execution",
-"parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "ログイン処理実行結果\n * 'success' : 成功\n * 'failure' : 失敗",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "description": "Notify results of DCSS login processing execution",
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "ログイン処理実行結果\n * 'success' : 成功\n * 'failure' : 失敗",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -4510,17 +4393,15 @@
                     "application/json"
                 ],
                 "description": "DCSS のログアウト処理実行の結果を通知する。",
-                "parameters": [
-                    {
-                        "name": "value",
-                        "in": "body",
-                        "description": "ログアウト処理実行結果\n * 'success' : 成功\n * 'failure' : 失敗",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/commonValueObject"
-                        }
+                "parameters": [{
+                    "name": "value",
+                    "in": "body",
+                    "description": "ログアウト処理実行結果\n * 'success' : 成功\n * 'failure' : 失敗",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/commonValueObject"
                     }
-                ],
+                }],
                 "responses": {
                     "204": {
                         "description": "成功"
@@ -5172,7 +5053,7 @@
             ],
             "properties": {
                 "ssid": {
-							"description": "SSID encoded with BASE64, character code is UTF-8"
+                    "description": "SSID encoded with BASE64, character code is UTF-8",
                     "type": "string"
                 },
                 "security": {
@@ -5180,55 +5061,55 @@
                     "type": "string"
                 },
                 "passwd": {
-"description": "access point access password",
+                    "description": "access point access password",
                     "type": "string"
                 },
                 "dhcp": {
-"description": "true 'when using DHCP,' false 'if not used,
+                    "description": "true 'when using DHCP,' false 'if not used",
                     "type": "string"
                 },
                 "static_address": {
-"description": "IP address specification, DHCP not used",
+                    "description": "IP address specification, DHCP not used",
                     "type": "string"
                 },
                 "gateway": {
-"description": "Gateway address specification, DHCP unused",
+                    "description": "Gateway address specification, DHCP unused",
                     "type": "string"
                 },
                 "network_mask": {
-"description": "Specifying network prefix length (0 - 32), DHCP unused",
+                    "description": "Specifying network prefix length (0 - 32), DHCP unused",
                     "type": "string"
                 },
                 "dns1": {
-"description": "Primary DNS address, DHCP not used",
+                    "description": "Primary DNS address, DHCP not used",
                     "type": "string"
                 },
                 "dns2": {
-"description": "Secondary DNS address (empty character if not specified), DHCP not used",
+                    "description": "Secondary DNS address (empty character if not specified), DHCP not used",
                     "type": "string"
                 },
                 "proxy": {
-"description": "true 'when using proxy,' false 'if not used,
+                    "description": "true 'when using proxy,' false 'if not used",
                     "type": "string"
                 },
                 "proxy_host": {
-"description": "address of proxy, when using proxy",
+                    "description": "address of proxy, when using proxy",
                     "type": "string"
                 },
                 "proxy_port": {
-"description": "Port of proxy, when using proxy",
+                    "description": "Port of proxy, when using proxy",
                     "type": "string"
                 },
                 "eap": {
-"description": "EAP method specification ['peap' / 'tls']",
+                    "description": "EAP method specification ['peap' / 'tls']",
                     "type": "string"
                 },
                 "eap_phase2": {
-"description": "Specifying the EAP phase 2 authentication method ['none' / 'gtc' / 'pap' / 'mschap' / 'mschapv 2']"
+                    "description": "Specifying the EAP phase 2 authentication method ['none' / 'gtc' / 'pap' / 'mschap' / 'mschapv 2']",
                     "type": "string"
                 },
                 "eap_id": {
-"description": "EAP login ID",
+                    "description": "EAP login ID",
                     "type": "string"
                 },
                 "eap_anid": {
@@ -5236,7 +5117,7 @@
                     "type": "string"
                 },
                 "eap_cacert": {
-"description": "EAP CA certificate name",
+                    "description": "EAP CA certificate name",
                     "type": "string"
                 },
                 "eap_cert": {
