@@ -291,6 +291,18 @@ class DigitalPaper():
             ap['ssid'] = base64.b64decode(ap['ssid']).decode('utf-8', errors='replace')
         return data['aplist']
 
+    ###timeconfig
+    def getsleeptime(self):
+        data=self._get_endpoint('/system/configs/timeout_to_standby').json()
+        return data['value']
+
+    ###setsleeptime
+    def minsleeptime(self):
+        return self._put_endpoint('/system/configs/timeout_to_standby',data =
+{'value': '2' })
+    
+        
+
     def wifi_scan(self):
         data = self._post_endpoint('/system/controls/wifi_accesspoints/scan').json()
         for ap in data['aplist']:

@@ -70,6 +70,14 @@ def do_delete_wifi(d):
 def do_register(d):
     d.register()
 
+def do_getsleeptime(d):
+    data = d.getsleeptime()
+    print(json.dumps(data, indent=2))
+
+def do_minsleeptime(d):
+    print(d.minsleeptime())
+
+
 if __name__ == "__main__":
 
     commands = {
@@ -87,7 +95,9 @@ if __name__ == "__main__":
         "wifi": do_wifi,
         "wifi-enable" : do_wifi_enable,
         "wifi-disable" : do_wifi_disable,
-        "register" : do_register
+        "register" : do_register,
+        "getsleeptime" : do_getsleeptime,
+        "minsleeptime" : do_minsleeptime
     }
 
     def build_parser():
