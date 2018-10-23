@@ -87,3 +87,28 @@ sudo asar p ~/Desktop/dpt ./Contents/Resources/app.asar
 ```
 
 Now run the Digital Paper App and it will create two files, _client\_id.txt_ and _key.pem_, on the desktop once the pairing is complete.
+
+
+
+
+
+
+
+## On  SleepTime of SONY  dpt-rp1
+
+The default sleeping time was set as 5mins as minimum value,  it will cause the battery runs out very quickly.
+
+So 'getsleeptime' & 'minsleeptime' were added for  minimize the auto-sleep time.
+
+
+
+```
+usage: dptrp1 [-h] --client-id CLIENT_ID --key KEY [--addr ADDR]
+              {delete,download,getsleeptime,list-documents,minsleeptime,new-folder,register,screenshot,upload,wifi,wifi-add,wifi-del,wifi-disable,wifi-enable,wifi-list,wifi-scan}
+              [command_args [command_args ...]]
+```
+
+
+
+
+
